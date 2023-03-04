@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-import { Sidebar } from './components/Sidebar'
+import { Sidebar } from './components/Navbar'
 
 import tailwindStylesheetUrl from './styles/tailwind.css'
 import draculaStylesUrl from './styles/dracula.css'
