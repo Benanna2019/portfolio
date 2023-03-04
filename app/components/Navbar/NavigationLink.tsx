@@ -35,6 +35,7 @@ export function NavigationLink({
       {!isExternal ? (
         <Link
           to={href}
+          prefetch="intent"
           onClick={onClickFn}
           className={classNames(
             isActive
