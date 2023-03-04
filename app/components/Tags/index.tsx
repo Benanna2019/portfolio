@@ -17,14 +17,24 @@ export function Tags({ tags }: any) {
 
 export function Tag({ name }: any) {
   const baseClasses =
-    'flex-none justify-center flex items-center space-x-2 cursor-pointer self-start border uppercase rounded-full hover:bg-opacity-100  px-3 py-0.5 text-xs font-semibold leading-5 tracking-wide border-opacity-50 dark:border-opacity-10'
+    'flex-none justify-center flex items-center space-x-2 cursor-pointer self-start border uppercase rounded-full hover:bg-opacity-100  px-3 py-0.5 text-xs font-semibold leading-5 tracking-wide border-opacity-50 '
 
   let specificClasses = ''
   if (name) {
     switch (name?.toLowerCase()) {
+      case 'remix': {
+        specificClasses =
+          'border-blue-600 text-white bg-blue-600 bg-opacity-90 '
+        break
+      }
+      case 'supabase': {
+        specificClasses =
+          'border-emerald-200 text-slate-900 bg-emerald-500 bg-opacity-60 hover:bg-opacity-90'
+        break
+      }
       case 'indie': {
         specificClasses =
-          'border-purple-200 text-purple-600 dark:text-purple-300 bg-purple-500 bg-opacity-5 dark:bg-opacity-10'
+          'border-purple-200 text-purple-600  bg-purple-500 bg-opacity-5 '
         break
       }
       case 'open source': {
@@ -34,7 +44,7 @@ export function Tag({ name }: any) {
       }
       case 'portfolio': {
         specificClasses =
-          'border-blue-200 text-blue-600 bg-blue-500 bg-opacity-5 dark:bg-opacity-10'
+          'border-blue-200 text-blue-600 bg-blue-500 bg-opacity-5 '
         break
       }
       case 'website': {
