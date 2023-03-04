@@ -1,11 +1,17 @@
-import { AboutPageContent } from "~/components/PageContent/About";
+import { MetaFunction } from '@remix-run/node'
+import { AboutPageContent } from '~/components/PageContent/About'
+
+export const meta: MetaFunction = () => ({
+  title: 'Ben A. Patton | About',
+  description: 'About Ben',
+})
 
 export default function Index() {
   return (
     <>
-    <div className="flex flex-col max-w-3xl mx-auto">
-      <AboutPageContent />
-    </div>
+      <div className="mx-auto flex max-w-3xl flex-col">
+        <AboutPageContent />
+      </div>
     </>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { LoaderFunction } from '@remix-run/node'
+import { LoaderFunction, MetaFunction } from '@remix-run/node'
 import React from 'react'
 import { json, useLoaderData } from 'react-router'
 import { Detail } from '~/components/ListDetail/Detail'
@@ -6,17 +6,19 @@ import { ListItem } from '~/components/ListDetail/ListItem'
 import { SectionContainer, SectionContent } from '~/components/PageContent/Home'
 import { Post, Posts } from '~/lib/post-validator'
 import { getPosts } from '~/models/post.server'
-import { compose, takeRight } from 'lodash/fp'
 
 export const loader: LoaderFunction = async () => {
   let data = await getPosts()
   return json(data)
 }
 
+export const meta: MetaFunction = () => ({
+  title: 'Ben A. Patton | Articles',
+  description: 'Articles on react, javascript, & other random musings.',
+})
+
 export default function Articles() {
   let data = useLoaderData() as Posts
-
-  console.log('data', compose(takeRight(1))(data))
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col pt-8">
