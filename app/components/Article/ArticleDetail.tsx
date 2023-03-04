@@ -20,6 +20,7 @@ export default function ArticleDetail({ post }: any) {
           <Detail.Header>
             <Link
               to="/articles"
+              prefetch="intent"
               className="hover:animate-pulse hover:text-blue-500 hover:underline"
             >
               <p>← Back</p>

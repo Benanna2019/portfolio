@@ -21,7 +21,7 @@ export function ListItem({
 }: Props) {
   const formattedDate = getDate(parseISO(byline as string))
   return (
-    <Link to={href} prefetch="intent">
+    <Link to={href} prefetch="render">
       <span
         onClick={onClick && onClick}
         className="flex space-x-3 border-b border-gray-100 py-3 px-3.5 text-sm  hover:rounded-md hover:bg-slate-100 lg:rounded-sm lg:border-none lg:py-2"
