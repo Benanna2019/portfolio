@@ -1,15 +1,13 @@
 import type { CLSReportCallback } from 'web-vitals'
+import { onCLS, onFCP, onFID, onLCP, onTTFB } from 'web-vitals'
 
 const reportWebVitals = (onPerfEntry: CLSReportCallback) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    //@ts-ignore
-    import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
-      onCLS(onPerfEntry)
-      onFID(onPerfEntry)
-      onFCP(onPerfEntry)
-      onLCP(onPerfEntry)
-      onTTFB(onPerfEntry)
-    })
+    onCLS(onPerfEntry)
+    onFID(onPerfEntry)
+    onFCP(onPerfEntry)
+    onLCP(onPerfEntry)
+    onTTFB(onPerfEntry)
   }
 }
 

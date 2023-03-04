@@ -3,9 +3,11 @@ import type { Metric } from 'web-vitals'
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals'
 
 function getConnectionSpeed() {
-  const isSupported = !!(navigator as any)?.connection?.effectiveType
-
-  return isSupported ? (navigator as any)?.connection?.effectiveType : ''
+  return 'connection' in navigator &&
+    (navigator as any)['connection'] &&
+    'effectiveType' in (navigator as any)['connection']
+    ? (navigator as any)['connection']['effectiveType']
+    : ''
 }
 
 export function sendToVercelAnalytics(metric: Metric) {
